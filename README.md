@@ -2,8 +2,8 @@
 A Golang reimplementation of 4BOD fantasy console
 
 ## Download
-- [Windows v0.1 Download (zip)](https://github.com/Sam36502/4BOD-Go/releases/download/v0.1.0/4BOD-Go_Win_0.1.zip)
-- *Linux binary coming soon, but you should be able to build it if you have go with 'make build-lin'*
+- ### [Windows v1.0.0 Download (zip)](https://github.com/Sam36502/4BOD-Go/releases/download/v1.0.0/4BoD-Go_v1.0.0_Windows.zip)
+- ### [Linux v1.0.0 Download (zip)](https://github.com/Sam36502/4BOD-Go/releases/download/v1.0.0/4BoD-Go_v1.0.0_Linux.zip)
 
 ## Usage
 After startup, you can either choose to edit the current
