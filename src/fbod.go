@@ -62,8 +62,7 @@ func (f *FBOD) ClearScreen() {
 }
 
 func (f *FBOD) FlipPixel(x, y byte) {
-	var mask uint16 = (1 << x)
-	f.screen[y] ^= mask
+	f.screen[y] ^= 1 << (15 - x)
 }
 
 func (f *FBOD) GetPixel(x, y byte) byte {
@@ -83,6 +82,7 @@ func (f *FBOD) SaveProgram(filename string) error {
 
 func (f *FBOD) LoadProgram(filename string) error {
 	f.ClearMem()
+	f.program = make([]Instruction, 256)
 	data, err := ioutil.ReadFile(filename)
 	if err != nil {
 		return err
@@ -129,7 +129,7 @@ func (f *FBOD) PerformInstruction(progIndex byte) byte {
 		f.acc = ins.arg1
 
 	case FBOD_ASM_INA:
-		f.acc = 0 // TODO: Get arrow key input
+		f.acc = GetArrowsNybl()
 
 	case FBOD_ASM_INC:
 		f.acc++
@@ -145,7 +145,6 @@ func (f *FBOD) PerformInstruction(progIndex byte) byte {
 
 	case FBOD_ASM_SHR:
 		f.acc >>= 1
-		f.acc %= 16
 
 	case FBOD_ASM_RDP:
 		f.acc = f.GetPixel(x, y)

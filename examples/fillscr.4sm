@@ -1,0 +1,36 @@
+; Simple program to turn all pixels on the screen on
+
+#var x 0x0          ; define memory variables
+#var y 0x1
+
+    CLS             ; Make sure all pixels all 0 first
+    
+    STA     0xF     ; Set x to "-1"
+    MVM     x
+
+#label loop
+    MVA     x       ; Increment x
+    INC
+    MVM     x
+
+    FLP     x   y   ; Set pixel (x/y)
+
+    STA     0xF     ; Check if we need to increment y
+    CEQ     x
+    JMP     incy
+    
+    JMP     loop    ; Loop
+
+#label incy
+    MVA     y       ; Increment y
+    INC
+    MVM     y
+
+    STA     0x0     ; Check if we've looped
+    CEQ     y
+    JMP     end
+
+    JMP     loop
+
+#label end
+    JMP     end
