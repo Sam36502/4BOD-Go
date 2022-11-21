@@ -46,3 +46,10 @@ Options include:
 | `editor_overlay` | Whether to have the editor overlay on by default (Should save if turned off with it on) |
 | `debug_keycodes` | Whether to display the last pressed keycode on the screen (helpful for changing controls) |
 | `controls`       | A list of various keys and their keycodes (see `debug_keycodes`) |
+
+## Changing Keyboard Inputs
+The easiest way to change which keys do what is to set the `debug_keycodes` option by setting it to `true`
+and starting the machine. Then, you can press the keys you want each thing to do and write down what the
+keycode is. After that, you can change the respective `kc_...` settings in the controls part of `options.json`.
+You can also use `0` to unbind the key.
+

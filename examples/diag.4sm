@@ -3,9 +3,9 @@
 
 #var pos 0x0            ; Labels addr 0x0 with name 'pos'
 
-#label loop
+    FLG     0
     FLP     pos   pos   ; Flip pixel at (pos/pos)
     INC                 ; Increment accumulator (starts at 0)
     MVM     pos         ; Move accumulator value to pos
-    JMP     loop        ; Jump to top of loop again
+    JMP     0x1         ; Jump to top of loop again
 
