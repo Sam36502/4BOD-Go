@@ -24,6 +24,8 @@ func main() {
 		rl.SetTargetFPS(int32(g_options.TargetFPS))
 	}
 
+	rl.SetExitKey(g_options.Controls.ExitKey)
+
 	fvm := NewFBOD()
 
 	lastKey := int32(0)

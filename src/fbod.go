@@ -156,7 +156,7 @@ func (f *FBOD) PerformInstruction(progIndex byte) byte {
 		// Does nothing; flags are read before execution
 
 	case FBOD_ASM_JMP:
-		nextIndex = f.flags[ins.arg1]
+		nextIndex = f.flags[x]
 
 	case FBOD_ASM_CEQ:
 		if !(x == f.acc) {

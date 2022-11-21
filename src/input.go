@@ -9,6 +9,7 @@ type ControlConfig struct {
 	RightKey   int32 `json:"kc_right"`
 	UpKey      int32 `json:"kc_up"`
 	DownKey    int32 `json:"kc_down"`
+	ExitKey    int32 `json:"kc_exit"`
 	SelectKey  int32 `json:"kc_enter"`
 	BackKey    int32 `json:"kc_back"`
 	SaveKey    int32 `json:"kc_save"`
